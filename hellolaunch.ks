@@ -14,10 +14,10 @@ FROM {local countdown is 10.} UNTIL countdown = 0 STEP {SET countdown to countdo
     WAIT 1. // pauses the script here for 1 second.
 }
 
-UNTIL SHIP:MAXTHRUST > 0 {
-    WAIT 0.5. // pause half a second between stage attempts.
-    PRINT "Stage activated.".
-    STAGE. // same as hitting the spacebar.
+when maxthrust = 0 then {
+  print "staging".
+  stage.
+  preserve.
 }
 
 WAIT UNTIL SHIP:ALTITUDE > 70000.
