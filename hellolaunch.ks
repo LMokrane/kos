@@ -5,6 +5,7 @@ CLEARSCREEN.
 
 //gaz a 100%
 lock throttle to 1.0.
+LOCK STEERING TO UP.
 
 //This is our countdown loop, which cycles from 10 to 0
 PRINT "Counting down:".
