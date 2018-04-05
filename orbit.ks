@@ -33,6 +33,7 @@ print "apoapsis : 100km".
 // on coupe les gaz
 lock throttle to 0.
 
+
 // quand on passe l'altitude de 75Km, on decouple et on reprend le controle de la direction.
 // on garde la portance des ailerons dans l'atmosphere, pour maintenir la fusee droite
 wait until ship:altitude > 75000.
@@ -40,10 +41,8 @@ stage.
 lock steering to gravity.
 set gravity to heading(90,0).
 
-// quand la vitesse verticale passe 130m/s on pousse les gaz a fond !
-// a defaut de pouvoir calculer le Time to Apo comme MechJeb
-// ça fait a peu pres 25s avant Apo
-wait until verticalspeed < 130.
+// 25s avant Apoapsis, gaz à 100%
+wait until eta:apoapsis < 25.
 lock throttle to 1.0.
 
 // on point vers l'est à l'horizontale, jusqu'à periapsis = 100km
